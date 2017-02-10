@@ -10,7 +10,7 @@ namespace FizzBuzz
   {
     static void Main()
     {
-      Part2.FizzBuzzBangGoesTheDictionary();
+      Part2.FizzBuzzBangBong();
 
       Console.ReadLine();
     }

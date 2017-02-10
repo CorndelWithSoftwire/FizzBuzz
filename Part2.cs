@@ -49,5 +49,35 @@ namespace FizzBuzz
       }
     }
 
+    public static void FizzBuzzBangBong()
+    {
+      for (int i = 1; i <= 200; i++)
+      {
+        var builder = new StringBuilder();
+
+        if (i % 3 == 0)
+        {
+          builder.Append("Fizz");
+        }
+
+        if (i % 5 == 0)
+        {
+          builder.Append("Buzz");
+        }
+
+        if (i % 7 == 0)
+        {
+          builder.Append("Bang");
+        }
+
+        if (i % 11 == 0)
+        {
+          builder.Clear();
+          builder.Append("Bong");
+        }
+
+        Console.WriteLine(builder.Length == 0 ? i.ToString() : builder.ToString());
+      }
+    }
   }
 }
