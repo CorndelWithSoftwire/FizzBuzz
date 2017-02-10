@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FizzBuzz
@@ -27,6 +29,23 @@ namespace FizzBuzz
         }
 
         Console.WriteLine(builder.Length == 0 ? i.ToString() : builder.ToString());
+      }
+    }
+
+    public static void FizzBuzzBangGoesTheDictionary()
+    {
+      var rules = new Dictionary<int, string> {{3, "Fizz"}, {5, "Buzz"}, {7, "Bang"}};
+
+      for (int i = 1; i <= 200; i++)
+      {
+        if (rules.Any(rule => i%rule.Key == 0))
+        {
+          Console.WriteLine(string.Join("", rules.Where(rule => i%rule.Key == 0).Select(rule => rule.Value)));
+        }
+        else
+        {
+          Console.WriteLine(i);
+        }
       }
     }
 
