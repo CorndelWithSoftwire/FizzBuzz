@@ -19,5 +19,15 @@ namespace FizzBuzz
         .ToList()
         .ForEach(Console.WriteLine);
     }
+
+    public static void FizzBuzzBangViaEnumerable()
+    {
+      var fizzBuzzer = new FizzBuzzBangEnumerable();
+
+      foreach (var value in fizzBuzzer)
+      {
+        Console.WriteLine(value);
+      }
+    }
   }
 }

@@ -10,7 +10,7 @@ namespace FizzBuzz
   {
     static void Main()
     {
-      StretchGoals.FizzBuzzBangOneLiner();
+      StretchGoals.FizzBuzzBangViaEnumerable();
 
       Console.ReadLine();
     }
