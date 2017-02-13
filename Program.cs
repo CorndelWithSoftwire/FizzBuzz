@@ -10,7 +10,7 @@ namespace FizzBuzz
   {
     static void Main()
     {
-      Part2.FizzFezzBuzzBangBong();
+      Part2.FizzFezzBuzzBangBongReverse();
 
       Console.ReadLine();
     }
