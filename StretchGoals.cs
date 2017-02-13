@@ -29,5 +29,30 @@ namespace FizzBuzz
         Console.WriteLine(value);
       }
     }
+
+    public static void FizzFezzBuzzBangBongReverseWithOptions(int limit, IList<int> enabledRules)
+    {
+      var simpleRules = new Dictionary<int, string> { { 3, "Fizz" }, { 13, "Fezz" }, { 5, "Buzz" }, { 7, "Bang" }, { 11, "Bong" } };
+
+      for (int i = 1; i <= limit; i++)
+      {
+        // Get the basic list of strings
+        var outputs = simpleRules.Where(rule => enabledRules.Contains(rule.Key) && i % rule.Key == 0).Select(rule => rule.Value).ToList();
+
+        // Apply more complex rules
+        if (outputs.Contains("Bong"))
+        {
+          outputs.RemoveAll(s => s != "Bong" && s != "Fezz");
+        }
+
+        if (i % 17 == 0 && enabledRules.Contains(17))
+        {
+          outputs.Reverse();
+        }
+
+        Console.WriteLine(outputs.Count == 0 ? i.ToString() : string.Join("", outputs));
+      }
+    }
+
   }
 }
