@@ -118,5 +118,24 @@ namespace FizzBuzz
         Console.WriteLine(builder.Length == 0 ? i.ToString() : builder.ToString());
       }
     }
+
+    public static void FizzFezzBuzzBangBongLazily()
+    {
+      var simpleRules = new Dictionary<int, string> { { 3, "Fizz" }, { 13, "Fezz" }, { 5, "Buzz" }, { 7, "Bang" }, {11, "Bong"} };
+
+      for (int i = 1; i <= 200; i++)
+      {
+        // Get the basic list of strings
+        var outputs = simpleRules.Where(rule => i%rule.Key == 0).Select(rule => rule.Value).ToList();
+
+        // Apply more complex rules
+        if (outputs.Contains("Bong"))
+        {
+          outputs = outputs.Where(s => s == "Bong" || s == "Fezz").ToList();
+        }
+
+        Console.WriteLine(outputs.Count == 0 ? i.ToString() : string.Join("", outputs));
+      }
+    }
   }
 }
